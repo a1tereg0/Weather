@@ -12,7 +12,7 @@ data class WeatherData (
 
 @JsonClass(generateAdapter = true)
 data class CurrentWeather (
-        val temp: Boolean,
+        val temp: Double,
         @Json(name = "feels_like")
         val feelsLike: Double,
         val pressure: Int,
@@ -25,10 +25,12 @@ data class CurrentWeather (
         @Json(name = "wind_gust")
         val windGust: Double,
         val weather: List<WeatherSummary>,
+        val uvi: Double
         )
 
 @JsonClass(generateAdapter = true)
 data class WeatherSummary(
+        val id: Int,
         val main: String,
         val description: String
 )
