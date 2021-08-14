@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Weather</string>
+    <string name="temperature_value">%1$.1f °C</string>
+    <string name="wind_value">%1$.2f metre/sec</string>
+    <string name="uv_value">%1$.2f (moderate = 3–5)</string>
+    <string name="humidity_value">%1$d %%</string>
+    <string name="feels_like">Feels Like</string>
+    <string name="wind">Wind</string>
+    <string name="uv_index">UV Index</string>
+    <string name="refresh">Refresh</string>
+    <string name="humidity">Humidity</string>
 </resources>
