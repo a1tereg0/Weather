@@ -13,10 +13,16 @@ import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.viewModels
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.content.res.AppCompatResources
 import androidx.lifecycle.lifecycleScope
+import com.example.weather.databinding.ActivityMainBinding
+import com.example.weather.network.models.WeatherData
 import com.google.android.gms.location.*
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
@@ -28,14 +34,19 @@ import java.lang.Exception
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var binding: ActivityMainBinding
+
     private lateinit var locationClient: FusedLocationProviderClient
-    private lateinit var textView: TextView
+    private val viewModel by viewModels<MainViewModel> {
+        val apiService = (application as WeatherApplication).serviceLocator.apiService
+        val repository = WeatherRepository(apiService)
+        MainViewModelFactory(repository)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        textView = findViewById(R.id.text_view)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         locationClient = LocationServices.getFusedLocationProviderClient(this)
         if (!isLocationOn()) {
@@ -62,6 +73,32 @@ class MainActivity : AppCompatActivity() {
             }).onSameThread().check()
         }
 
+//        viewModel.liveCoordinate.observe(this){}
+
+        viewModel.liveWeatherData.observe(this) {
+                it?.let { updateUI(it)
+                }
+            }
+    }
+
+    private fun updateUI(weatherData: WeatherData) {
+        with(binding) {
+            temperature.text = getString(R.string.temperature_value, weatherData.current.temp)
+            feelsLikeValue.text = getString(R.string.temperature_value, weatherData.current.feelsLike)
+            windValue.text = getString(R.string.wind_value,weatherData.current.windSpeed)
+            humidityValue.text = getString(R.string.humidity_value, weatherData.current.humidity)
+            uvValue.text = getString(R.string.uv_value, weatherData.current.uvi)
+            val a = weatherData.current.weather
+            when(weatherData.current.weather[0].id) {
+                in 200..232 -> weatherSummaryImg.setImageDrawable(getDrawable(R.drawable.ic_cloud_lightning))
+                in 300..321 -> weatherSummaryImg.setImageDrawable(getDrawable(R.drawable.ic_cloud_drizzle))
+                in 500..531 -> weatherSummaryImg.setImageDrawable(getDrawable(R.drawable.ic_cloud_rain))
+                in 600..622 -> weatherSummaryImg.setImageDrawable(getDrawable(R.drawable.ic_cloud_snow))
+                800 -> weatherSummaryImg.setImageDrawable(getDrawable(R.drawable.ic_sun))
+                else -> weatherSummaryImg.setImageDrawable(getDrawable(R.drawable.ic_cloud))
+            }
+        }
+
     }
 
 
@@ -76,9 +113,8 @@ class MainActivity : AppCompatActivity() {
     private val locationCallback = object: LocationCallback() {
         override fun onLocationResult(locationResult : LocationResult) {
             val lastLocation: Location = locationResult.lastLocation
-            val latitude = lastLocation.latitude
-            val longitude = lastLocation.longitude
-            Log.i("Location", "Latitude: $latitude, Longitude: $longitude")
+            val coordinate = Coordinate(lastLocation.latitude, lastLocation.longitude)
+            viewModel.afterSuccessfullyFetchedLocationData(coordinate)
         }
     }
 
@@ -106,4 +142,18 @@ class MainActivity : AppCompatActivity() {
                 || locationManager.isProviderEnabled(LocationManager.NETWORK_PROVIDER)
     }
 
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when(item.itemId) {
+            R.id.refresh -> {
+                requestDataForLocation()
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
+        }
+    }
 }

@@ -3,7 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_main.xml" value="0.13020833333333334" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/gradient_background.xml" value="0.2703125" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_baseline_refresh_24.xml" value="0.1" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_cloud.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_cloud_drizzle.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_cloud_lightning.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_cloud_rain.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_cloud_rain_solid.xml" value="0.2703125" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_cloud_snow.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_cloud_solid.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_sun.xml" value="0.14635416666666667" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_sun_regular.xml" value="0.2703125" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_temperature_low_solid.xml" value="0.2703125" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_tint_solid.xml" value="0.2703125" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_wind_solid.xml" value="0.2703125" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/menu/main_menu.xml" value="0.25416666666666665" />
       </map>
     </option>
   </component>
