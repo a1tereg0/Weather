@@ -28,21 +28,24 @@
             android:id="@+id/temperature_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="64dp"
             android:padding="10dp"
             android:src="@drawable/ic_temperature_low_solid"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/temperature_text_view"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/temperature_text_view"
-            tools:layout_editor_absoluteY="79dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/wind_icon" />
 
         <TextView
             android:id="@+id/temperature_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/temperature_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="91dp"
+            app:layout_constraintStart_toEndOf="@+id/temperature_icon"
+            app:layout_constraintTop_toBottomOf="@+id/wind_text_view"
             tools:text="20 Degree C" />
 
         <ImageView
@@ -51,42 +54,46 @@
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:src="@drawable/ic_wind_solid"
-            app:layout_constraintEnd_toStartOf="@+id/humidity_icon"
+            app:layout_constraintBottom_toTopOf="@+id/temperature_icon"
+            app:layout_constraintEnd_toStartOf="@+id/wind_text_view"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/wind_text_view"
-            tools:layout_editor_absoluteY="41dp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/humidity_icon" />
 
         <TextView
             android:id="@+id/wind_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/wind_icon"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="50dp"
-            tools:text="20 wind C" />
-
-        <ImageView
-            android:id="@+id/humidity_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_tint_solid"
-            app:layout_constraintBottom_toBottomOf="@+id/humidity_text_view"
+            app:layout_constraintBottom_toTopOf="@+id/temperature_text_view"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/humidity_text_view" />
+            app:layout_constraintStart_toEndOf="@+id/wind_icon"
+            app:layout_constraintTop_toBottomOf="@+id/humidity_text_view"
+            tools:text="20 wind C" />
 
         <TextView
             android:id="@+id/humidity_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toStartOf="@+id/humidity_icon"
+            app:layout_constraintBottom_toTopOf="@+id/wind_text_view"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="16dp"
+            app:layout_constraintStart_toEndOf="@+id/humidity_icon"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="20 Humidity C" />
 
+        <ImageView
+            android:id="@+id/humidity_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:src="@drawable/ic_tint_solid"
+            app:layout_constraintBottom_toTopOf="@+id/wind_icon"
+            app:layout_constraintEnd_toStartOf="@+id/humidity_text_view"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </androidx.cardview.widget.CardView>
