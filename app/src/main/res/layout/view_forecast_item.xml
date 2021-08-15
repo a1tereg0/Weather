@@ -1,99 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_marginHorizontal="16dp"
-    android:backgroundTint="@color/black"
-    android:layout_marginVertical="4dp">
+    android:layout_marginVertical="4dp"
+    android:layout_marginHorizontal="16dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginVertical="4dp">
-
-        <!--        <ImageView-->
-        <!--            android:id="@+id/weather_summary_icon"-->
-        <!--            android:layout_width="wrap_content"-->
-        <!--            android:layout_height="wrap_content"-->
-        <!--            android:paddingRight="10dp"-->
-        <!--            android:src="@drawable/ic_cloud"-->
-        <!--            app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--            app:layout_constraintStart_toStartOf="parent"-->
-        <!--            app:layout_constraintTop_toTopOf="parent" />-->
-
-        <ImageView
-            android:id="@+id/temperature_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="64dp"
-            android:padding="10dp"
-            android:src="@drawable/ic_temperature_low_solid"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/temperature_text_view"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/wind_icon" />
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/temperature_text_view"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/temperature_icon"
-            app:layout_constraintTop_toBottomOf="@+id/wind_text_view"
+            tools:layout_editor_absoluteX="233dp"
+            tools:layout_editor_absoluteY="96dp"
             tools:text="20 Degree C" />
-
-        <ImageView
-            android:id="@+id/wind_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:src="@drawable/ic_wind_solid"
-            app:layout_constraintBottom_toTopOf="@+id/temperature_icon"
-            app:layout_constraintEnd_toStartOf="@+id/wind_text_view"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/humidity_icon" />
 
         <TextView
             android:id="@+id/wind_text_view"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
             app:layout_constraintBottom_toTopOf="@+id/temperature_text_view"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/wind_icon"
-            app:layout_constraintTop_toBottomOf="@+id/humidity_text_view"
+            tools:layout_editor_absoluteX="171dp"
             tools:text="20 wind C" />
 
         <TextView
             android:id="@+id/humidity_text_view"
+            android:textColor="@color/black"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@+id/wind_text_view"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/humidity_icon"
-            app:layout_constraintTop_toTopOf="parent"
+            tools:layout_editor_absoluteY="40dp"
             tools:text="20 Humidity C" />
 
-        <ImageView
-            android:id="@+id/humidity_icon"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:src="@drawable/ic_tint_solid"
-            app:layout_constraintBottom_toTopOf="@+id/wind_icon"
-            app:layout_constraintEnd_toStartOf="@+id/humidity_text_view"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
 
 </androidx.cardview.widget.CardView>
