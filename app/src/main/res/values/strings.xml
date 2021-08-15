@@ -9,4 +9,6 @@
     <string name="uv_index">UV Index</string>
     <string name="refresh">Refresh</string>
     <string name="humidity">Humidity</string>
+    <string name="current_weather">Current</string>
+    <string name="daily_weather">Daily</string>
 </resources>

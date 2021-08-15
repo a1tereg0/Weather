@@ -18,6 +18,10 @@
         <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_tint_solid.xml" value="0.2703125" />
         <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/drawable/ic_wind_solid.xml" value="0.2703125" />
         <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/layout/activity_main.xml" value="0.4" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_breed.xml" value="0.264" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_forecasts.xml" value="0.15625" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/layout/fragment_weather.xml" value="0.15625" />
+        <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/layout/view_forecast_item.xml" value="0.536" />
         <entry key="..\:/Users/prasa/AndroidStudioProjects/Weather/app/src/main/res/menu/main_menu.xml" value="0.25416666666666665" />
       </map>
     </option>

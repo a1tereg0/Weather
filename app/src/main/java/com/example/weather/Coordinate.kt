@@ -1,6 +1,6 @@
 package com.example.weather
 
-data class Coordinate (
-    var latitude: Double,
-    var longitude: Double
-)
+object Coordinate {
+    var latitude: Double = 80.99
+    var longitude: Double = 46.49
+}
